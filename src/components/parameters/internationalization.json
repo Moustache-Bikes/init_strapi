@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_parameters_internationalizations",
+  "info": {
+    "displayName": "internationalization",
+    "icon": "earth",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "language_choice": {
+      "displayName": "language_pickers",
+      "type": "component",
+      "repeatable": true,
+      "component": "parameters.language-pickers",
+      "required": true
+    }
+  }
+}

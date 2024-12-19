@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_footer_footers",
+  "info": {
+    "displayName": "Footer",
+    "icon": "arrowDown"
+  },
+  "options": {},
+  "attributes": {
+    "yes": {
+      "type": "string"
+    }
+  }
+}

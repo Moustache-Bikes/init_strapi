@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_content_separateur_horizontal_s",
+  "info": {
+    "displayName": "Séparateur_horizontal ",
+    "icon": "oneToOne"
+  },
+  "options": {},
+  "attributes": {
+    "separator": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

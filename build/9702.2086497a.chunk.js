@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmoustache_strapi=self.webpackChunkmoustache_strapi||[]).push([[9702],{99702:e=>{e.exports=JSON.parse('{"country-select.label":"Land","country-select.description":"Eine Auswahl aller L\xE4nder","country-select.unsupported-country-code":"Der L\xE4ndercode \\"{countryCode}\\" wird nicht unterst\xFCtzt"}')}}]);

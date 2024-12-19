@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_image_carousels",
+  "info": {
+    "displayName": "Carousel",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "Carousel": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

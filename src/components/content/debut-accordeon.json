@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_content_debut_accordeons",
+  "info": {
+    "displayName": "Début accordéon",
+    "icon": "arrowRight"
+  },
+  "options": {},
+  "attributes": {
+    "Titre": {
+      "type": "string"
+    }
+  }
+}

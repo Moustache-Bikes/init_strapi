@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmoustache_strapi=self.webpackChunkmoustache_strapi||[]).push([[7245],{67245:e=>{e.exports=JSON.parse('{"country-select.label":"Pays","country-select.description":"S\xE9lectionnez un pays","country-select.unsupported-country-code":"Code de pays non support\xE9 : \\"{countryCode}\\""}')}}]);

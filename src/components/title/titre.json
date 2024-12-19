@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_title_titres",
+  "info": {
+    "displayName": "Titre",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Titre2": {
+      "type": "text"
+    }
+  }
+}

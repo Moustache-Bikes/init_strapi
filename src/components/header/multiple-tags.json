@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_header_multiple_tags",
+  "info": {
+    "displayName": "multiple_tags",
+    "icon": "priceTag",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "tag": {
+      "displayName": "tags",
+      "type": "component",
+      "repeatable": true,
+      "component": "header.tags",
+      "required": false
+    }
+  }
+}

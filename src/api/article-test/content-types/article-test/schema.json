@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "article_tests",
+  "info": {
+    "singularName": "article-test",
+    "pluralName": "article-tests",
+    "displayName": "article_test",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "header": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "header.header",
+        "header.date-parution",
+        "image.single-image",
+        "paragraphe.text",
+        "header.multiple-tags"
+      ],
+      "required": true
+    },
+    "Content": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "image.single-image",
+        "image.carousel",
+        "title.titre",
+        "paragraphe.text",
+        "buttons.view-more",
+        "banner.single-image-banner",
+        "banner.complete-banner",
+        "banner.double-image-banner",
+        "video.video",
+        "quote.quote",
+        "buttons.drop-down",
+        "buttons.dropdown-article",
+        "text-image.text-and-image",
+        "content.debut-accordeon",
+        "content.fin-accordeon",
+        "content.separateur-horizontal",
+        "video.video-from-link"
+      ]
+    },
+    "Parameters": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "parameters.priority",
+        "parameters.internationalization",
+        "country.country",
+        "parameters.brouillon"
+      ],
+      "required": true
+    }
+  }
+}

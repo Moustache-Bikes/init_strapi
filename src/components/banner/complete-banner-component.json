@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_banner_complete_banner_components",
+  "info": {
+    "displayName": "complete_banner_component",
+    "icon": "dashboard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "logo_emoji": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "titre_banner": {
+      "type": "string"
+    },
+    "text_banner": {
+      "type": "text"
+    }
+  }
+}

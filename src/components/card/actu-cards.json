@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_card_actu_cards",
+  "info": {
+    "displayName": "actu_cards",
+    "icon": "stack",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Card": {
+      "displayName": "Cards",
+      "type": "component",
+      "repeatable": true,
+      "component": "card.cards"
+    }
+  }
+}

@@ -451,6 +451,39 @@ export interface QuoteQuote extends Schema.Component {
   };
 }
 
+export interface SeoMetaDescription extends Schema.Component {
+  collectionName: 'components_seo_meta_descriptions';
+  info: {
+    displayName: 'meta_description';
+    icon: 'chartCircle';
+  };
+  attributes: {
+    meta_description: Attribute.String;
+  };
+}
+
+export interface SeoMetaTitle extends Schema.Component {
+  collectionName: 'components_seo_meta_titles';
+  info: {
+    displayName: 'meta_title';
+    icon: 'chartCircle';
+  };
+  attributes: {
+    title: Attribute.String;
+  };
+}
+
+export interface SeoSlug extends Schema.Component {
+  collectionName: 'components_seo_slugs';
+  info: {
+    displayName: 'slug';
+    icon: 'chartCircle';
+  };
+  attributes: {
+    slug: Attribute.String;
+  };
+}
+
 export interface TextImageTextAndImage extends Schema.Component {
   collectionName: 'components_text_image_text_and_images';
   info: {
@@ -549,6 +582,9 @@ declare module '@strapi/types' {
       'parameters.priority': ParametersPriority;
       'quote.citation': QuoteCitation;
       'quote.quote': QuoteQuote;
+      'seo.meta-description': SeoMetaDescription;
+      'seo.meta-title': SeoMetaTitle;
+      'seo.slug': SeoSlug;
       'text-image.text-and-image': TextImageTextAndImage;
       'title.titre': TitleTitre;
       'video.video-component': VideoVideoComponent;

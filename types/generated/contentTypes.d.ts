@@ -409,8 +409,6 @@ export interface ApiArticleTestArticleTest extends Schema.CollectionType {
         'buttons.drop-down',
         'buttons.dropdown-article',
         'text-image.text-and-image',
-        'content.debut-accordeon',
-        'content.fin-accordeon',
         'content.separateur-horizontal',
         'video.video-from-link'
       ]
@@ -453,6 +451,107 @@ export interface ApiArticleTestArticleTest extends Schema.CollectionType {
       'api::article-test.article-test',
       'oneToMany',
       'api::article-test.article-test'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiBlogB2CBlogB2C extends Schema.CollectionType {
+  collectionName: 'blog_b2cs';
+  info: {
+    singularName: 'blog-b2c';
+    pluralName: 'blog-b2cs';
+    displayName: 'blog_b2c';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Header: Attribute.DynamicZone<
+      ['title.titre', 'paragraphe.text', 'header.date-parution']
+    > &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Content: Attribute.DynamicZone<
+      [
+        'banner.complete-banner',
+        'banner.double-image-banner',
+        'banner.single-image-banner',
+        'buttons.button',
+        'buttons.dropdown-article',
+        'image.carousel',
+        'image.single-image',
+        'paragraphe.text',
+        'quote.quote',
+        'text-image.text-and-image',
+        'title.titre',
+        'video.video',
+        'video.video-from-link',
+        'content.separateur-horizontal'
+      ]
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Parameters: Attribute.DynamicZone<
+      [
+        'country.country',
+        'parameters.brouillon',
+        'parameters.internationalization',
+        'parameters.priority'
+      ]
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SEO: Attribute.DynamicZone<
+      ['seo.meta-description', 'seo.meta-title', 'seo.slug']
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Grid_title: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blog-b2c.blog-b2c',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::blog-b2c.blog-b2c',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::blog-b2c.blog-b2c',
+      'oneToMany',
+      'api::blog-b2c.blog-b2c'
     >;
     locale: Attribute.String;
   };
@@ -895,6 +994,7 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::article-test.article-test': ApiArticleTestArticleTest;
+      'api::blog-b2c.blog-b2c': ApiBlogB2CBlogB2C;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;

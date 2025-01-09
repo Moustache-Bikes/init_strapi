@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_video_video_components",
+  "info": {
+    "displayName": "video_component",
+    "icon": "slideshow"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string"
+    },
+    "from": {
+      "type": "enumeration",
+      "enum": [
+        "youtube",
+        "infomaniak"
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_content_contents",
+  "info": {
+    "displayName": "Content",
+    "icon": "file"
+  },
+  "options": {},
+  "attributes": {
+    "Single_photo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

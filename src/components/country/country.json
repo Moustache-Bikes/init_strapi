@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_country_countries",
+  "info": {
+    "displayName": "Country",
+    "icon": "earth",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "country_picker": {
+      "displayName": "country_content_available",
+      "type": "component",
+      "repeatable": true,
+      "component": "country.country-content-available",
+      "required": true
+    }
+  }
+}

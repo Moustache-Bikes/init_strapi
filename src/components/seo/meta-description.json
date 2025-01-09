@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_seo_meta_descriptions",
+  "info": {
+    "displayName": "meta_description",
+    "icon": "chartCircle"
+  },
+  "options": {},
+  "attributes": {
+    "meta_description": {
+      "type": "string"
+    }
+  }
+}

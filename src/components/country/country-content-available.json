@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_country_country_content_availables",
+  "info": {
+    "displayName": "country_content_available",
+    "icon": "paperPlane",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "country": {
+      "type": "customField",
+      "customField": "plugin::country-select.country",
+      "required": true
+    }
+  }
+}

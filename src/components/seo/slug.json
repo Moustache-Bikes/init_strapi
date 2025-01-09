@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_seo_slugs",
+  "info": {
+    "displayName": "slug",
+    "icon": "chartCircle"
+  },
+  "options": {},
+  "attributes": {
+    "slug": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_header_date_parutions",
+  "info": {
+    "displayName": "Date_parution",
+    "icon": "calendar",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Date": {
+      "type": "string"
+    }
+  }
+}

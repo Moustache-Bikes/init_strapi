@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_video_video_from_links",
+  "info": {
+    "displayName": "video_from_link",
+    "icon": "slideshow"
+  },
+  "options": {},
+  "attributes": {
+    "video_from_link": {
+      "displayName": "video_component",
+      "type": "component",
+      "repeatable": false,
+      "component": "video.video-component"
+    }
+  }
+}

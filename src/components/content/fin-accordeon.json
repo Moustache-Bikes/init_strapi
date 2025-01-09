@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_content_fin_accordeon_s",
+  "info": {
+    "displayName": "Fin accordéon ",
+    "icon": "arrowUp"
+  },
+  "options": {},
+  "attributes": {
+    "test": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_contenu_contenus",
+  "info": {
+    "displayName": "contenu"
+  },
+  "options": {},
+  "attributes": {
+    "titre_h2": {
+      "type": "text"
+    }
+  }
+}

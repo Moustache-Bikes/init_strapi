@@ -1,0 +1,94 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blog_b2cs",
+  "info": {
+    "singularName": "blog-b2c",
+    "pluralName": "blog-b2cs",
+    "displayName": "blog_b2c",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Header": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "title.titre",
+        "paragraphe.text",
+        "header.date-parution"
+      ],
+      "required": true
+    },
+    "Content": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "banner.complete-banner",
+        "banner.double-image-banner",
+        "banner.single-image-banner",
+        "buttons.button",
+        "buttons.dropdown-article",
+        "image.carousel",
+        "image.single-image",
+        "paragraphe.text",
+        "quote.quote",
+        "text-image.text-and-image",
+        "title.titre",
+        "video.video",
+        "video.video-from-link",
+        "content.separateur-horizontal"
+      ]
+    },
+    "Parameters": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "country.country",
+        "parameters.brouillon",
+        "parameters.internationalization",
+        "parameters.priority"
+      ]
+    },
+    "SEO": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "seo.meta-description",
+        "seo.meta-title",
+        "seo.slug"
+      ]
+    },
+    "Grid_title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "unique": true
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_paragraphe_texts",
+  "info": {
+    "displayName": "Text",
+    "icon": "layer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text_json": {
+      "type": "blocks"
+    }
+  }
+}

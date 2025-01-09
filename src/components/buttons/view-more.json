@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_buttons_view_mores",
+  "info": {
+    "displayName": "Boutons",
+    "icon": "cursor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Bouton": {
+      "displayName": "button",
+      "type": "component",
+      "repeatable": false,
+      "component": "buttons.button"
+    }
+  }
+}

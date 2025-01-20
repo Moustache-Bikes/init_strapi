@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_buttons_social_icons",
+  "info": {
+    "displayName": "social_icon",
+    "icon": "alien",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "icons": {
+      "displayName": "icon",
+      "type": "component",
+      "repeatable": true,
+      "component": "buttons.icon"
+    }
+  }
+}

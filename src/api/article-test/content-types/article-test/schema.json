@@ -71,6 +71,15 @@
         "parameters.brouillon"
       ],
       "required": true
+    },
+    "Grid_title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "unique": true
     }
   }
 }

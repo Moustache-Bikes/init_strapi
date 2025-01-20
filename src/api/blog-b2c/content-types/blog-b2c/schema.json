@@ -51,7 +51,11 @@
         "title.titre",
         "video.video",
         "video.video-from-link",
-        "content.separateur-horizontal"
+        "content.separateur-horizontal",
+        "paragraphe.numbered-list",
+        "image.mosaic",
+        "content.horizontal-card",
+        "buttons.social-icon"
       ]
     },
     "Parameters": {

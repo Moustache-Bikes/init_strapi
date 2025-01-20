@@ -22,7 +22,9 @@
       "type": "enumeration",
       "enum": [
         "Left",
-        "Right"
+        "Right",
+        "Top",
+        "Bottom"
       ],
       "default": "Left"
     },

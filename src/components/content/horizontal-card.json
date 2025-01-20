@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_content_horizontal_cards",
+  "info": {
+    "displayName": "horizontal_card",
+    "icon": "grid",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title_card": {
+      "type": "string"
+    },
+    "text_card": {
+      "type": "text"
+    },
+    "button_card": {
+      "type": "component",
+      "repeatable": false,
+      "component": "buttons.button"
+    },
+    "image_card": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

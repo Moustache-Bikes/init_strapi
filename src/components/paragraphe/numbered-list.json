@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_paragraphe_numbered_lists",
+  "info": {
+    "displayName": "numbered_list",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "list": {
+      "type": "blocks"
+    }
+  }
+}

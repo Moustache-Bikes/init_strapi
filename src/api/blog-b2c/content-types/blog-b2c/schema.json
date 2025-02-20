@@ -26,7 +26,8 @@
       "components": [
         "title.titre",
         "paragraphe.text",
-        "header.date-parution"
+        "header.date-parution",
+        "image.single-image"
       ],
       "required": true
     },
@@ -69,7 +70,8 @@
         "country.country",
         "parameters.brouillon",
         "parameters.internationalization",
-        "parameters.priority"
+        "parameters.priority",
+        "parameters.category"
       ]
     },
     "SEO": {

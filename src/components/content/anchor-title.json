@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_content_anchor_titles",
+  "info": {
+    "displayName": "Anchor_title",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

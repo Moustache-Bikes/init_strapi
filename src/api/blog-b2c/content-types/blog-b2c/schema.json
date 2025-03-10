@@ -56,7 +56,8 @@
         "paragraphe.numbered-list",
         "image.mosaic",
         "content.horizontal-card",
-        "buttons.social-icon"
+        "buttons.social-icon",
+        "content.anchor-title"
       ]
     },
     "Parameters": {

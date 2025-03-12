@@ -72,14 +72,14 @@
       ],
       "required": true
     },
-    "Grid_title": {
+    "Grid_title_b2b": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "string",
-      "unique": true
+      "unique": false
     }
   }
 }

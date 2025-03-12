@@ -432,6 +432,12 @@ export interface ApiArticleTestArticleTest extends Schema.CollectionType {
           localized: false;
         };
       }>;
+    Grid_title_b2b: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -474,7 +480,12 @@ export interface ApiBlogB2CBlogB2C extends Schema.CollectionType {
   };
   attributes: {
     Header: Attribute.DynamicZone<
-      ['title.titre', 'paragraphe.text', 'header.date-parution']
+      [
+        'title.titre',
+        'paragraphe.text',
+        'header.date-parution',
+        'image.single-image'
+      ]
     > &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -497,7 +508,12 @@ export interface ApiBlogB2CBlogB2C extends Schema.CollectionType {
         'title.titre',
         'video.video',
         'video.video-from-link',
-        'content.separateur-horizontal'
+        'content.separateur-horizontal',
+        'paragraphe.numbered-list',
+        'image.mosaic',
+        'content.horizontal-card',
+        'buttons.social-icon',
+        'content.anchor-title'
       ]
     > &
       Attribute.SetPluginOptions<{
@@ -510,7 +526,8 @@ export interface ApiBlogB2CBlogB2C extends Schema.CollectionType {
         'country.country',
         'parameters.brouillon',
         'parameters.internationalization',
-        'parameters.priority'
+        'parameters.priority',
+        'parameters.category'
       ]
     > &
       Attribute.SetPluginOptions<{

@@ -22,7 +22,8 @@
         "cinq",
         "pas_prio"
       ],
-      "required": true
+      "required": true,
+      "default": "pas_prio"
     }
   }
 }

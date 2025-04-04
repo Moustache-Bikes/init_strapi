@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blog-b2b",
     "pluralName": "blog-b2bs",
-    "displayName": "Blog_b2b"
+    "displayName": "Blog_b2b",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -34,7 +35,8 @@
         "header.date-parution",
         "header.header",
         "header.multiple-tags",
-        "header.tags"
+        "header.tags",
+        "image.single-image"
       ]
     },
     "Content": {

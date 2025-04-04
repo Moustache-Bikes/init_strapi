@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blog-formation",
     "pluralName": "blog-formations",
-    "displayName": "Blog_formation"
+    "displayName": "Blog_formation",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -34,7 +35,8 @@
         "header.date-parution",
         "header.header",
         "header.multiple-tags",
-        "header.tags"
+        "header.tags",
+        "image.single-image"
       ]
     },
     "Content": {

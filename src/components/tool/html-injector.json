@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_tool_html_injectors",
+  "info": {
+    "displayName": "html_injector",
+    "icon": "cast"
+  },
+  "options": {},
+  "attributes": {
+    "html": {
+      "type": "text"
+    }
+  }
+}

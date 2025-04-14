@@ -54,7 +54,8 @@
         "buttons.dropdown-article",
         "text-image.text-and-image",
         "content.separateur-horizontal",
-        "video.video-from-link"
+        "video.video-from-link",
+        "tool.html-injector"
       ]
     },
     "Parameters": {

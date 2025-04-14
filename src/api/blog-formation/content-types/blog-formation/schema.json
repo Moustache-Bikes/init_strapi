@@ -70,7 +70,8 @@
         "title.titre",
         "video.video-component",
         "video.video-from-link",
-        "video.video"
+        "video.video",
+        "tool.html-injector"
       ]
     },
     "Parameters": {

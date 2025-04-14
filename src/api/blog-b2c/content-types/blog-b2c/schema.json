@@ -57,7 +57,8 @@
         "image.mosaic",
         "content.horizontal-card",
         "buttons.social-icon",
-        "content.anchor-title"
+        "content.anchor-title",
+        "tool.html-injector"
       ]
     },
     "Parameters": {

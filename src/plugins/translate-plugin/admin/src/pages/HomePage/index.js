@@ -1,99 +1,141 @@
-// plugins/translate-plugin/admin/src/pages/HomePage/index.js
-import React,{useEffect,useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
-  Box, Grid, Card, CardBody,
-  Typography, DatePicker, Button
+  Box,
+  Flex,
+  Grid,
+  Card,
+  CardBody,
+  Typography,
+  DatePicker,
+  Button,
 } from '@strapi/design-system';
 import { useFetchClient, useNotification } from '@strapi/helper-plugin';
-import { Calendar } from '@strapi/icons';
+import { Calendar, Store, List, OneToMany } from '@strapi/icons';
 
-const day = 24*3600;               // seconds
+const MS  = 1_000;
+const DAY = 24 * 3600;
+const toSec = (d) => Math.floor(d.getTime() / MS);
+const sum = (b, pick) => (b || []).reduce((t, bucket) =>
+  t + pick(bucket.results?.[0] || {}), 0);
 
-const isoToSec = (d)=>Math.floor(new Date(d).getTime()/1000);
+export default function HomePage() {
+  const { get } = useFetchClient();
+  const notify  = useNotification();
 
-const HomePage = () => {
-  const notify   = useNotification();
-  const { get } = useFetchClient();   // GET, POST, put, del…
-  const today    = new Date();
-  const weekAgo  = new Date(Date.now()-7*day*1000);
+  const today   = new Date();
+  const weekAgo = new Date(Date.now() - DAY * MS * 7);
 
-  const [from,setFrom]     = useState(weekAgo);
-  const [to,setTo]         = useState(today);
-  const [costs,setCosts]   = useState(null);
-  const [usage,setUsage]   = useState(null);
-  const [loading,setLoad]  = useState(false);
+  const [from, setFrom]   = useState(weekAgo);
+  const [to,   setTo]     = useState(today);
+  const [busy, setBusy]   = useState(false);
+  const [costPage,  setCost]  = useState(null);
+  const [usagePage, setUsage] = useState(null);
 
-  const load = async () => {
-    setLoad(true);
+  const fetchStats = async () => {
+    setBusy(true);
     try {
-      const params = { from: isoToSec(from).toString(), to: isoToSec(to).toString() }; // Example params
-      const qs = new URLSearchParams(params).toString();
-  
-      // get() renvoie { data, status, ... }
-      const [costsRes, usageRes] = await Promise.all([
+      const qs = new URLSearchParams({
+        from: toSec(from).toString(),
+        to  : toSec(to).toString(),
+      }).toString();
+
+      const [{ data: costs }, { data: usage }] = await Promise.all([
         get(`/translate-plugin/openai/costs?${qs}`),
-        get(`/translate-plugin/openai/completions?${qs}`)
+        get(`/translate-plugin/openai/completions?${qs}`),
       ]);
-  
-      setCosts(costsRes.data);
-      setUsage(usageRes.data);
-    } catch (e) {
-      notify({ type: 'warning', message: 'Cannot load OpenAI stats' });
+
+      setCost(costs);
+      setUsage(usage);
+    } catch {
+      notify({ type:'warning', message:'Cannot load OpenAI stats' });
     }
-    setLoad(false);
+    setBusy(false);
   };
-  
 
-  useEffect(() => {
-    load();
-  }, []);
+  useEffect(() => { fetchStats(); }, []);
 
-  const totalCost = costs?.data.reduce((s,b)=>s + (b.results[0].amount.value||0),0).toFixed(4) ?? '–';
-  const totalTok  = usage?.data.reduce((s,b)=>
-        s + (b.results[0].input_tokens||0)+(b.results[0].output_tokens||0)
-       ,0).toLocaleString() ?? '–';
+  const totalCost = costPage
+    ? sum(costPage.data, (r)=>r.amount?.value ?? 0).toFixed(4) : '–';
+
+  const totalTok  = usagePage
+    ? sum(usagePage.data, (r)=>(r.input_tokens||0)+(r.output_tokens||0))
+      .toLocaleString() : '–';
+
+  const totalReq  = usagePage
+    ? sum(usagePage.data, (r)=>r.num_model_requests||0)
+      .toLocaleString() : '–';
 
   return (
     <Box padding={8} background="neutral100">
-      <Typography variant="alpha">OpenAI usage dashboard</Typography>
+      <Typography variant="alpha" fontWeight="bold">
+        OpenAI usage dashboard
+      </Typography>
 
-      <Box paddingTop={4} paddingBottom={4}>
-        <DatePicker
-          label="From"
-          selectedDate={from}
-          onChange={(d)=>setFrom(d)}
-        />
-        <DatePicker
-          label="To"
-          selectedDate={to}
-          onChange={(d)=>setTo(d)}
-        />
-        <Button startIcon={<Calendar/>} loading={loading} onClick={load}>
+      {/* plage de dates */}
+      <Flex
+        marginTop={4}
+        marginBottom={6}
+        padding={4}
+        background="neutral0"
+        shadow="tableShadow"
+        hasRadius
+        gap={4}
+        alignItems="flex-end"
+        wrap="wrap"
+      >
+        <DatePicker label="From" selectedDate={from} onChange={setFrom}/>
+        <DatePicker label="To"   selectedDate={to}   onChange={setTo}/>
+        <Button
+          variant="secondary"
+          startIcon={<Calendar/>}
+          loading={busy}
+          onClick={fetchStats}
+        >
           Refresh
         </Button>
-      </Box>
+      </Flex>
 
-      <Grid gap={4}>
-        <Card id="total-cost-card"><CardBody>
-          <Typography fontWeight="bold">Total cost ($)</Typography>
-          <Typography variant="epsilon">{totalCost}</Typography>
-        </CardBody></Card>
+      {/* KPI en trois colonnes fixes (≥ 260 px) */}
+      <Grid gap={4} gridTemplateColumns="repeat(auto-fit,minmax(260px,1fr))">
+        {/* coût */}
+        <Card id="total-cost-card" shadow="tableShadow" background="neutral0">
+          <CardBody>
+            <Flex gap={3} alignItems="center">
+              <Store width={24} height={24}/>
+              <Typography fontWeight="bold">Total cost</Typography>
+              <Typography variant="beta" marginLeft="auto">
+                ${totalCost}
+              </Typography>
+            </Flex>
+          </CardBody>
+        </Card>
 
-        <Card id="total-tokens-card"><CardBody>
-          <Typography fontWeight="bold">Total tokens</Typography>
-          <Typography variant="epsilon">{totalTok}</Typography>
-        </CardBody></Card>
+        {/* tokens */}
+        <Card id="total-tokens-card" shadow="tableShadow" background="neutral0">
+          <CardBody>
+            <Flex gap={3} alignItems="center">
+              <List width={24} height={24}/>
+              <Typography fontWeight="bold">Total tokens</Typography>
+              <Typography variant="beta" marginLeft="auto">
+                {totalTok}
+              </Typography>
+            </Flex>
+          </CardBody>
+        </Card>
 
-        <Card id="requests-card"><CardBody>
-          <Typography fontWeight="bold">Requests</Typography>
-          <Typography variant="epsilon">
-            {usage?.data.reduce((s,b)=>s+(b.results[0].num_model_requests||0),0)
-              .toLocaleString() ?? '–'}
-          </Typography>
-        </CardBody></Card>
+        {/* requêtes */}
+        <Card id="requests-card" shadow="tableShadow" background="neutral0">
+          <CardBody>
+            <Flex gap={3} alignItems="center">
+              <OneToMany width={24} height={24}/>
+              <Typography fontWeight="bold">Requests</Typography>
+              <Typography variant="beta" marginLeft="auto">
+                {totalReq}
+              </Typography>
+            </Flex>
+          </CardBody>
+        </Card>
       </Grid>
     </Box>
   );
-};
-
-export default HomePage;
+}

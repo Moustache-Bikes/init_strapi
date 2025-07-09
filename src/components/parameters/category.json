@@ -9,16 +9,11 @@
     "categ": {
       "type": "enumeration",
       "enum": [
-        "Produits",
-        "Événements",
-        "Aides, primes",
-        "Innovations",
-        "Partenariats",
-        "Awards",
-        "Ambassadeurs",
-        "Les conseils des Moustachus",
-        "Les histoires des Moustachus",
-        "E-team"
+        "Products, Innovations & Awards",
+        "E-team, Ambassadors & Partnerships",
+        "Moustachus Stories",
+        "Events",
+        "Moustachus Tips"
       ]
     }
   }
